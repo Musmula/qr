@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="hero is-warning">
+    <section class="section hero is-primary">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title">
@@ -75,7 +75,7 @@
         
                 <div class="field">
                     <div class="control center-vertically">
-                        <button class="button is-warning">Register</button>
+                        <button class="button is-primary">Register</button>
                         <a href="{{ url('login') }}">Already have an account?</a>
                     </div>
                 </div>

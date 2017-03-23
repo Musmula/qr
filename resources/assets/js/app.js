@@ -18,7 +18,8 @@ Vue.component('qr', require('./components/QrCode.vue'));
 const app = new Vue({
     el: '#app',
     data: {
-        mobileNav: false
+        mobileNav: false,
+        QrContent: ''
     },
     methods: {
         signOut() {

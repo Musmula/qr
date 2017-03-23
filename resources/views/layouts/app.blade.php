@@ -14,6 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <!-- Scripts -->
     <script>
@@ -37,15 +38,15 @@
             @if (Auth::guest())
                 <div class="nav-item">
                     <a href="{{ url('login') }}" class="button">Login</a>
-                    <a href="{{ url('register') }}" class="button is-warning">Sign up</a>
+                    <a href="{{ url('register') }}" class="button is-primary">Sign up</a>
                 </div>
             @else
             <form id="sign-out" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form>
             <div class="nav-item">
-                <a href="{{ url('/home') }}" class="button is-warning">
-                    Home
+                <a href="{{ url('/home') }}" class="button is-primary">
+                    Generate
                 </a>
                 <a class="button" @click.prevent="signOut">
                     Sign out

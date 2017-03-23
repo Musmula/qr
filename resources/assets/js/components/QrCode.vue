@@ -1,37 +1,59 @@
 <template>
-    <form action="save/" method="POST">
-        <input type="hidden" name="_token" :value="token">
-        <div class="field">
-            <label for="content" class="label">Link</label>
-            <input type="text" v-model="QrContent" @keyup="updateQrCode" class="input" id="content">
-        </div>
-        <canvas id="qr-code"></canvas>
-        <!-- <button class="button is-fullwidth is-large is-warning">Save</button> -->
-    </form>
+    <canvas id="qr-code"></canvas>
 </template>
 
 <script>
     export default {
+        props: {
+            content: {
+                required: true,
+                type: String
+            },
+            type: {
+                required: false,
+                default: 'text',
+            }
+        },
+
         data() {
             return {
-                QrCode: {},
-                QrContent: 'http://',
-                token: window.Laravel.csrfToken
+                QrCode: {}
             }
         },
 
         mounted() {
-
             this.QrCode = new QRious({
                 element: document.getElementById('qr-code'),
-                value: this.QrContent,
-                size: 1024,
+                value: this.generateContent,
+                size: 300,
             })
         },
 
         methods: {
             updateQrCode() {
-                this.QrCode.value = this.QrContent
+                this.QrCode.value = this.generateContent
+            }
+        },
+
+        watch: {
+            content() {
+                this.updateQrCode()
+            }
+        },
+
+        computed: {
+            generateContent() {
+                switch (this.type){
+                    case 'text':
+                        return '' + this.content
+                        break
+                    case 'website':
+                        return 'http://' + this.content
+                        break
+                    default:
+                        return ''
+                        break
+                }
             }
         }
     }

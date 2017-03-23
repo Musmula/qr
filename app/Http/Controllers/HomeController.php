@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return redirect('/generate/web');
+    }
+
+    public function web() {
+        return view("web");
+    }
+
+    public function text() {
+        return view("text");
     }
 }
