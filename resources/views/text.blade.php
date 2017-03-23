@@ -11,7 +11,7 @@
         <div class="columns">
             <div class="column">
                 <div class="field">
-                    <label for="input" class="label">Link:</label>
+                    <label for="input" class="label">Text:</label>
                     <p class="control">
                         <textarea id="input" v-model="QrContent" class="textarea"></textarea>
                     </p>
