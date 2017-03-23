@@ -14,12 +14,14 @@ require('./bootstrap');
  */
 
 Vue.component('qr', require('./components/QrCode.vue'));
+Vue.component('vcard', require('./components/vCard.vue'));
 
 const app = new Vue({
     el: '#app',
     data: {
         mobileNav: false,
-        QrContent: ''
+        QrContent: '',
+        vCardString: ''
     },
     methods: {
         signOut() {
@@ -28,5 +30,13 @@ const app = new Vue({
         toggleMobileMenu() {
             this.mobileNav = ! this.mobileNav
         }
+    },
+
+    created() {
+        window.app = this
+        this.$on('newCard', (data) => {
+            console.log(data)
+            app.vCardString = data
+        })
     }
 });

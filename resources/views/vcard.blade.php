@@ -9,18 +9,11 @@
 <section class="section">
     <div class="container">
         <div class="columns">
-            <div class="column">
-                <div class="field">
-                    <label for="input" class="label">Link:</label>
-                    <p class="control">
-                        <textarea id="input" v-model="QrContent" class="textarea"></textarea>
-                    </p>
-                </div>
-            </div>
+            <vCard></vCard>
             <div class="column">
                 <div class="field">
                     <label class="label">Live preview</label>
-                    <qr :content="QrContent" :is-website="false"></qr>
+                    <qr :content="QrContent" type="vcard"></qr>
                 </div>
             </div>
         </div>

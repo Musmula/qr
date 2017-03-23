@@ -27,10 +27,14 @@ class HomeController extends Controller
     }
 
     public function web() {
-        return view("web");
+        return view("web", ['active' => 'web']);
     }
 
     public function text() {
-        return view("text");
+        return view("text", ['active' => 'text']);
+    }
+
+    public function vcard() {
+        return view("vcard", ['active' => 'vcard']);
     }
 }

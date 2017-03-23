@@ -1,4 +1,6 @@
 window.QRious = require('qrious')
+window.vCard = require('vcards-js')
+window.Event = require('./events.js')
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces

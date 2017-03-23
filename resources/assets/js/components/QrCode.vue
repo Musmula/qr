@@ -50,6 +50,9 @@
                     case 'website':
                         return 'http://' + this.content
                         break
+                    case 'vcard':
+                        return 'vcard'
+                        break
                     default:
                         return ''
                         break

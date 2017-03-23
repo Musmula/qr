@@ -4,25 +4,23 @@
 
 @include('partials.bulma-header')
 
-@include('partials.secondary-nav', ['active' => 'web'])
+@include('partials.secondary-nav')
 
 <section class="section">
     <div class="container">
         <div class="columns">
             <div class="column">
-                <form action="javascript:void(0)">
-                    <div class="field">
-                        <label for="input" class="label">Link:</label>
-                        <p class="control">
-                            <input type="text" id="input" class="input" placeholder="http://" v-model="QrContent">
-                        </p>
-                    </div>
-                    <div class="field">
-                        <p class="control">
-                            <button class="button is-primary">Make dynamic</button>
-                        </p>
-                    </div>
-                </form>
+                <div class="field">
+                    <label for="input" class="label">Link:</label>
+                    <p class="control">
+                        <input type="text" id="input" class="input" placeholder="http://" v-model="QrContent">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <button class="button is-primary">Make dynamic</button>
+                    </p>
+                </div>
             </div>
             <div class="column">
                 <div class="field">
