@@ -6,7 +6,13 @@
             <div class="content">
                 <ul>
                     @foreach ($links as $link)
-                        <li><a @click="viewCode('{{ $link->static_link }}')">{{ $link->name }}</a></li>
+                        <li><a @click="fireModal('{{ $link->id }}')">{{ $link->name }}</a></li>
+                        <modal-qr ref='{{ $link->id }}' url="{{ $link->static_link }}">
+                            <span slot="name">{{ $link->name }}</span>
+                            <p>
+                                {{ $link->description }}
+                            </p>
+                        </modal-qr>
                     @endforeach
                 </ul>
             </div>

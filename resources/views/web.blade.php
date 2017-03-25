@@ -61,6 +61,6 @@
     </div>
 </section>
 
-@include('partials.links-wip')
+@include('partials.user-links')
 
 @endsection

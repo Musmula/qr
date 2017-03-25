@@ -12,6 +12,16 @@
             type: {
                 required: false,
                 default: 'text',
+            },
+            padding: {
+                type: Number,
+                required: false,
+                default: null
+            },
+            size: {
+                type: Number,
+                required: false,
+                default: 300
             }
         },
 
@@ -25,7 +35,8 @@
             this.QrCode = new QRious({
                 element: document.getElementById(this.randomId),
                 value: this.generateContent,
-                size: 300,
+                size: this.size,
+                padding: this.padding
             })
         },
 

@@ -15,6 +15,7 @@ require('./bootstrap');
 
 Vue.component('qr', require('./components/QrCode.vue'));
 Vue.component('vcard', require('./components/vCard.vue'));
+Vue.component('modal-qr', require('./components/ModalQr.vue'));
 
 const app = new Vue({
     el: '#app',
@@ -53,7 +54,11 @@ const app = new Vue({
 
         viewCode(link) {
             swal( Laravel.url + '/dynamic/' + link)
-        } 
+        },
+
+        fireModal(name) {
+            this.$refs[name].show = true
+        }
     },
 
     computed: {
