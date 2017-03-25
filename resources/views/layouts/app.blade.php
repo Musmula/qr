@@ -63,6 +63,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @include('sweet::alert')
     @include('partials.footer')
 </body>
 </html>

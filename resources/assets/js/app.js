@@ -22,6 +22,10 @@ const app = new Vue({
         mobileNav: false,
         QrContent: '',
         vCardString: '',
+
+        // I guess this should have its own component
+        webCodeType: 'Static',
+
         // This should have its own component
         latitude: 0,
         longitude: 0,

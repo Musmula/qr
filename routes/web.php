@@ -24,3 +24,7 @@ Route::get('/generate/vcard', 'HomeController@vcard');
 Route::get('/generate/location', 'HomeController@location');
 Route::get('/generate/email', 'HomeController@email');
 Route::get('/generate/wifi', 'HomeController@wifi');
+
+Route::post('/generate/dynamic', 'QrController@generate');
+
+Route::get('/dynamic/{QrCodeLink}', 'QrController@redirect');

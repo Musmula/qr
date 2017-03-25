@@ -1,6 +1,9 @@
+// The actual QR Code generator
 window.QRious = require('qrious')
+// The vCard formatter
 window.vCard = require('vcards-js')
-window.Event = require('./events.js')
+// The notifications
+window.swal = require('sweetalert')
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
