@@ -14,7 +14,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <!-- Scripts -->
     <script>
@@ -27,7 +26,10 @@
     <div id="app">
     <nav class="nav container">
         <div class="nav-left">
-            <a href="{{ url('/') }}" class="nav-item">{{ config('app.name') }}</a>
+            <a href="{{ url('/') }}" class="nav-item is-brand">
+                <img src="{{ url('/img/logo.jpg') }}" alt="{{ config('app.name') }}"> &nbsp;
+                <span>{{ config('app.name') }}</span>
+            </a>
         </div>
         <span class="nav-toggle" @click="mobileNav = ! mobileNav">
             <span></span>

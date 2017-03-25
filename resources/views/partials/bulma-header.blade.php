@@ -1,4 +1,4 @@
-<section class="section hero is-primary">
+<section class="section hero is-primary generator">
     <div class="hero-body">
         <div class="container">
             <h1 class="title color-dark">Generate a new QR code</h1>
