@@ -14,19 +14,19 @@
                     <span class="icon is-small"><i class="fa fa-vcard"></i></span>
                     <span>vCard</span>
                 </a>
-                <a class="nav-item is-tab {{ $active == 'location' ? 'is-active' : '' }}">
+                <a class="nav-item is-tab {{ $active == 'location' ? 'is-active' : '' }}" href="{{ url('/generate/location') }}">
                     <span class="icon is-small"><i class="fa fa-map-marker"></i></span>
                     <span>Location</span>
                 </a>
-                <a class="nav-item is-tab {{ $active == 'event' ? 'is-active' : '' }}">
+{{--                 <a class="nav-item is-tab {{ $active == 'event' ? 'is-active' : '' }}">
                     <span class="icon is-small"><i class="fa fa-calendar"></i></span>
                     <span>Event</span>
-                </a>
-                <a class="nav-item is-tab {{ $active == 'email' ? 'is-active' : '' }}">
+                </a> --}}
+                <a class="nav-item is-tab {{ $active == 'email' ? 'is-active' : '' }}" href="{{ url('/generate/email') }}">
                     <span class="icon is-small"><i class="fa fa-envelope"></i></span>
                     <span>E-mail</span>
                 </a>
-                <a class="nav-item is-tab {{ $active == 'wifi' ? 'is-active' : '' }}">
+                <a class="nav-item is-tab {{ $active == 'wifi' ? 'is-active' : '' }}" href="{{ url('/generate/wifi') }}">
                     <span class="icon is-small"><i class="fa fa-wifi"></i></span>
                     <span>Wi-Fi</span>
                 </a>

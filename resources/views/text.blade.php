@@ -20,7 +20,7 @@
             <div class="column">
                 <div class="field">
                     <label class="label">Live preview</label>
-                    <qr :content="QrContent" :is-website="false"></qr>
+                    <qr :content="QrContent" :type="text"></qr>
                 </div>
             </div>
         </div>

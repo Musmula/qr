@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index');
 Route::get('/generate/web', 'HomeController@web');
 Route::get('/generate/text', 'HomeController@text');
 Route::get('/generate/vcard', 'HomeController@vcard');
+Route::get('/generate/location', 'HomeController@location');
+Route::get('/generate/email', 'HomeController@email');
+Route::get('/generate/wifi', 'HomeController@wifi');

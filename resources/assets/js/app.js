@@ -21,14 +21,46 @@ const app = new Vue({
     data: {
         mobileNav: false,
         QrContent: '',
-        vCardString: ''
+        vCardString: '',
+        // This should have its own component
+        latitude: 0,
+        longitude: 0,
+
+        // This should have its own component
+        recipient: '',
+        subject: '',
+        emailContents: '',
+
+        // This should have its own component
+        ssid: '',
+        wifiEncryption: 'WPA',
+        wifiPass: '',
+        wifiHidden: false
     },
+
     methods: {
         signOut() {
             document.querySelector('#sign-out').submit()
         },
         toggleMobileMenu() {
             this.mobileNav = ! this.mobileNav
+        }
+    },
+
+    computed: {
+        location() {
+            return 'geo:' + this.latitude + ',' + this.longitude + ',400'
+        },
+
+        email() {
+            return `MATMSG:TO:${this.recipient};SUB:${this.subject};BODY:${this.emailContents};;`
+        },
+
+        wifi() {
+            if (this.wifiEncryption == 'nopass') {
+                this.wifiPass = ''
+            }
+            return `WIFI:T:${this.wifiEncryption};S:${this.ssid};P:${this.wifiPass};H:${this.wifiHidden};`
         }
     },
 

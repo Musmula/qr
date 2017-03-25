@@ -37,4 +37,16 @@ class HomeController extends Controller
     public function vcard() {
         return view("vcard", ['active' => 'vcard']);
     }
+
+    public function location() {
+        return view("location", ['active' => 'location']);
+    }
+
+    public function email() {
+        return view("email", ['active' => 'email']);
+    }
+
+    public function wifi() {
+        return view("wifi", ['active' => 'wifi']);
+    }
 }
