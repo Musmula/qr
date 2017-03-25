@@ -4,27 +4,10 @@ $primary: #4DA2C6
 @import 'node_modules/bulma/bulma'
 @import 'node_modules/font-awesome/scss/font-awesome'
 @import 'node_modules/sweetalert/dev/sweetalert'
+@import 'bulma_augmentations'
 
-#qr-code
+.qr-code
     max-width: 100%
-
-.footer a 
-    color: darken($primary, 20%)
-    &:hover
-        color: darken($primary, 30%)
-
-.center-vertically
-    display: flex
-    align-items: center
-    a 
-        padding-left: 10px
-
-.home-nav 
-    .tabs a
-        margin-bottom: 0
-//     .nav-center
-//         width: 100%
-//         overflow: auto
 
 .hero.generator 
     background: $black url('img/sphere.jpg') no-repeat center

@@ -1,5 +1,5 @@
 <template>
-    <canvas id="qr-code"></canvas>
+    <canvas :id="randomId" class="qr-code"></canvas>
 </template>
 
 <script>
@@ -23,7 +23,7 @@
 
         mounted() {
             this.QrCode = new QRious({
-                element: document.getElementById('qr-code'),
+                element: document.getElementById(this.randomId),
                 value: this.generateContent,
                 size: 300,
             })
@@ -42,6 +42,10 @@
         },
 
         computed: {
+            randomId() {
+                return Math.random().toString(36).substr(2, 15)
+            },
+
             generateContent() {
                 switch (this.type){
                     case 'text':

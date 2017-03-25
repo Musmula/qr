@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class QrController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('redirect');
     }
 
     // Generate a new dynamic Qr Code

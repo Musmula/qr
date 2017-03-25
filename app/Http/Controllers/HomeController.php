@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,7 +28,11 @@ class HomeController extends Controller
     }
 
     public function web() {
-        return view("web", ['active' => 'web']);
+        $links = Auth::user()->links;
+        return view("web", [
+            'active' => 'web',
+            'links' => $links
+        ]);
     }
 
     public function text() {

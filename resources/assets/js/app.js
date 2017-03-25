@@ -46,9 +46,14 @@ const app = new Vue({
         signOut() {
             document.querySelector('#sign-out').submit()
         },
+
         toggleMobileMenu() {
             this.mobileNav = ! this.mobileNav
-        }
+        },
+
+        viewCode(link) {
+            swal( Laravel.url + '/dynamic/' + link)
+        } 
     },
 
     computed: {
