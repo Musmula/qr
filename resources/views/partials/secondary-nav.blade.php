@@ -10,10 +10,10 @@
                     <span class="icon is-small"><i class="fa fa-file-text"></i></span>
                     <span>Text</span>
                 </a>
-                <a class="nav-item is-tab {{ $active == 'vcard' ? 'is-active' : '' }}" href="{{ url('/generate/vcard') }}">
+{{--                 <a class="nav-item is-tab {{ $active == 'vcard' ? 'is-active' : '' }}" href="{{ url('/generate/vcard') }}">
                     <span class="icon is-small"><i class="fa fa-vcard"></i></span>
                     <span>vCard</span>
-                </a>
+                </a> --}}
                 <a class="nav-item is-tab {{ $active == 'location' ? 'is-active' : '' }}" href="{{ url('/generate/location') }}">
                     <span class="icon is-small"><i class="fa fa-map-marker"></i></span>
                     <span>Location</span>
