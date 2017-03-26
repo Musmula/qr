@@ -28,3 +28,4 @@ Route::get('/generate/wifi', 'HomeController@wifi');
 Route::post('/generate/dynamic', 'QrController@generate');
 
 Route::get('/dynamic/{QrCodeLink}', 'QrController@redirect');
+Route::post('/dynamic/{QrCodeLink}/update', 'QrController@update');

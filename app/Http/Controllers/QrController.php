@@ -36,6 +36,17 @@ class QrController extends Controller
         return redirect($qrcode->dynamic_link);
     }
 
+    public function update($QrCodeLink, Request $request) {
+        // Check if this user is connected to the link
+        $qrcode = QrCode::where('static_link', $QrCodeLink)->first();
+        if ($qrcode->user == Auth::user()) {
+            $qrcode->update($request->all());
+            alert()->success('Qr Code updated');
+        }
+
+        return redirect()->back();
+    }
+
     // 
     // Helpers
     // 
