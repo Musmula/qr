@@ -32,7 +32,7 @@
                 <span>{{ config('app.name') }}</span>
             </a>
         </div>
-        <span class="nav-toggle" @click="mobileNav = ! mobileNav">
+        <span class="nav-toggle" @click="mobileNav = ! mobileNav" :class="{ 'is-active' : mobileNav }">
             <span></span>
             <span></span>
             <span></span>
