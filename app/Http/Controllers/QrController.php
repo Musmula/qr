@@ -39,9 +39,19 @@ class QrController extends Controller
     public function update($QrCodeLink, Request $request) {
         // Check if this user is connected to the link
         $qrcode = QrCode::where('static_link', $QrCodeLink)->first();
-        if ($qrcode->user == Auth::user()) {
+        if (Auth::user()->hasPermission($qrcode)) {
             $qrcode->update($request->all());
             alert()->success('Qr Code updated');
+        }
+
+        return redirect()->back();
+    }
+
+    public function drop($QrCodeLink) {
+        $qrcode = QrCode::where('static_link', $QrCodeLink)->first();
+        if (Auth::user()->hasPermission($qrcode)) {
+            $qrcode->delete();
+            alert()->success('Qr Code Deleted');
         }
 
         return redirect()->back();

@@ -2,18 +2,25 @@
     <transition name="fade">
         <div v-if="show" class="modal is-active">
             <div class="modal-background" @click="show = false"></div>
+            <!-- Action forms -->
+            <form :action="action" style="display: none" method="POST" :id="formId">
+                <input type="hidden" name="_token" :value="token">
+                <input type="hidden" name="dynamic_link" v-model="link">
+                <input type="hidden" name="name" v-model="name">
+                <textarea name="description" v-model="description"></textarea>
+            </form>
+            <form :action="qrContent" style="none" method="POST" :id="dropFormId">
+                <input type="hidden" name="_token" :value="token">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="static_link" v-model="qrContent">
+            </form>
+            <!-- End action forms -->
             <div class="modal-content" @click.stop>
                 <div class="modal-card code">
-                    <form :action="action" style="display: none" method="POST" :id="formId">
-                        <input type="hidden" name="_token" :value="token">
-                        <input type="hidden" name="dynamic_link" v-model="link">
-                        <input type="hidden" name="name" v-model="name">
-                        <textarea name="description" v-model="description"></textarea>
-                    </form>
                     <header class="modal-card-head">
                         <div class="modal-card-title">
                             <span v-if="!edit">{{ setName }}</span>
-                            <input type="text" class="input" v-if="edit" name="name" v-model="name">
+                            <input @keydown.enter="submitForm" type="text" class="input" v-if="edit" name="name" v-model="name">
                         </div>
                     </header>
                     <section class="modal-card-body has-text-centered">
@@ -23,15 +30,15 @@
                             <textarea name="description" class="textarea" v-if="edit" v-model="description"></textarea>
                         </p>
                         <p class="control">
-                            <input type="text" class="input" :disabled="!edit" v-model="link">
+                            <input type="text" @keydown.enter="submitForm" class="input" :disabled="!edit" v-model="link">
                         </p>
                     </section>
                     <footer class="modal-card-foot">
                         <a class="button is-success" v-if="edit" @click="submitForm">Save</a>
-                        <a class="button" v-if="!edit">Download</a>
+                        <!-- <a class="button" v-if="!edit">Download</a> -->
                         <a class="button" @click="edit = !edit" v-if="!edit">Edit</a>
                         <a class="button" @click="edit = !edit" v-if="edit">Cancel</a>
-                        <a class="button">Delete</a>
+                        <a class="button" @click="submitDeletionForm">Delete</a>
                     </footer>
                 </div>
             </div>
@@ -50,7 +57,8 @@
                 description: '',
                 link: '',
                 token: Laravel.csrfToken,
-                formId: ''
+                formId: '',
+                dropFormId: ''
             }
         },
 
@@ -63,7 +71,7 @@
 
             action() {
                 return Laravel.url + '/dynamic/' + this.staticLink + '/update'
-            },
+            }
         },
 
         methods: {
@@ -73,6 +81,10 @@
 
             submitForm() {
                 document.getElementById(this.formId).submit()
+            },
+
+            submitDeletionForm() {
+                document.getElementById(this.dropFormId).submit()
             }
         },
 
@@ -81,6 +93,7 @@
             this.description = this.setDescription
             this.link = this.setLink
             this.formId = this.randomId()
+            this.dropFormId = this.randomId()
         }
     }
 </script>

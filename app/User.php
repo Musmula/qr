@@ -31,4 +31,8 @@ class User extends Authenticatable
     public function links() {
         return $this->hasMany(QrCode::class);
     }
+
+    public function hasPermission(QrCode $code) {
+        return $this == $code->user;
+    }
 }
