@@ -22,7 +22,7 @@
                                 <select v-model="webCodeType">
                                     <option value="Static" title="test">Static</option>
                                     <option value="Dynamic" 
-                                            disabled="{{ Auth::guest() ? 'true' : 'false' }}"
+                                            {!! Auth::guest() ? 'disabled' : null !!}
                                             {!! Auth::guest() ? 'title="You have to have an account to use this feature"' : null !!}
                                             >Dynamic</option>
                                 </select>

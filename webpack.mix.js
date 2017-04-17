@@ -17,4 +17,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
         node: {
             fs: "empty"
         }
-   });
+   })
+   .combine(['public/css/app.css', 'public/css/qr.css'], 'public/css/app.css');

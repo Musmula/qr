@@ -10,7 +10,6 @@
   "devDependencies": {
     "bulma": "^0.4.0",
     "cross-env": "^3.2.3",
-    "font-awesome": "^4.7.0",
     "laravel-mix": "^0.8.3",
     "qrious": "^2.2.0",
     "sweetalert": "^1.1.3",

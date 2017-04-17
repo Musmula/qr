@@ -54,14 +54,12 @@
             <form id="sign-out" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form>
-            <div class="nav-item">
-                <a href="{{ url('/home') }}" class="button is-primary">
-                    Generate
-                </a>
-                <a class="button" @click.prevent="signOut">
-                    Sign out
-                </a>
-            </div>
+            <a href="{{ url('/profile') }}" class="nav-item">
+                Profile
+            </a>
+            <a class="nav-item" @click.prevent="signOut">
+                Sign out
+            </a>
             @endif
         </div>
     </nav>
