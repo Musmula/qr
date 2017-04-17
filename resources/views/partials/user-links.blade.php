@@ -1,4 +1,4 @@
-@if (count($links) > 0)
+@if (isset($links) && count($links) > 0)
     <section class="section">
         <div class="container">
             <h2 class="title is-4">Your Dynamic web QR Codes</h2>
