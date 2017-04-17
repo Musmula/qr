@@ -10,6 +10,13 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    {{-- OpenGraph --}}
+    <meta property="og:title" content="{{ config('app.name') }}">
+    <meta property="og:description" content="Qr codes from space">
+    <meta property="og:image" content="{{ url('img/splash.jpg') }}">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="fb:app_id" content="{{ env('APP_ID') }}">
+
     @include('partials.favicon')
 
     <!-- Styles -->
