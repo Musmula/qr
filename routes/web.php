@@ -34,3 +34,5 @@ Route::delete('/dynamic/{QrCodeLink}', 'QrController@drop');
 
 // Profile routes
 Route::get('/profile', 'ProfileController@show');
+Route::patch('/profile', 'ProfileController@update');
+Route::patch('/profile/password', 'ProfileController@password');
