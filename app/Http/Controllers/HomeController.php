@@ -17,29 +17,33 @@ class HomeController extends Controller
             $links = Auth::user()->links;
         }
 
-        return view("web", [
+        return view('web', [
             'active' => 'web',
             'links' => isset($links) ? $links : null
         ]);
     }
 
     public function text() {
-        return view("text", ['active' => 'text']);
+        return view('text', ['active' => 'text']);
     }
 
     public function vcard() {
-        return view("vcard", ['active' => 'vcard']);
+        return view('vcard', ['active' => 'vcard']);
     }
 
     public function location() {
-        return view("location", ['active' => 'location']);
+        return view('location', ['active' => 'location']);
     }
 
     public function email() {
-        return view("email", ['active' => 'email']);
+        return view('email', ['active' => 'email']);
     }
 
     public function wifi() {
-        return view("wifi", ['active' => 'wifi']);
+        return view('wifi', ['active' => 'wifi']);
+    }
+
+    public function about() {
+        return view('about', ['active' => 'none']);
     }
 }

@@ -45,6 +45,7 @@
             <span></span>
         </span>
         <div class="nav-right nav-menu" :class="{ 'is-active' : mobileNav }">
+            <a href="{{ url('about') }}" class="nav-item">About</a>
             @if (Auth::guest())
                 <div class="nav-item">
                     <a href="{{ url('login') }}" class="button">Login</a>

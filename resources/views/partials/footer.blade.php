@@ -8,7 +8,7 @@
                         <span class="icon">
                             <i class="icon-heart"></i>
                         </span>
-                        &mp; <a href="https://laravel.com" target="_blank">Laravel</a> + <a href="https://vuejs.org" target="_blank">VueJS</a>
+                        &amp; <a href="https://laravel.com" target="_blank">Laravel</a> + <a href="https://vuejs.org" target="_blank">VueJS</a>
                     </p>
                     <p>
                         Wanna buy the dev a cuppa coffee?
