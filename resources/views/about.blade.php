@@ -9,6 +9,10 @@
 <section class="section">
     <div class="container">
         <div class="column is-6 content">
+            <h2>What are Dynamic QR Codes?</h2>
+            <p>
+                Dynamic QR codes are QR codes which you generate once, and then modify as you please. They only work as links to websites (see below) and never change in appearance, while allowing you edit the web address they point to, after they have been generated.
+            </p>
             <h2>The story behind this app</h2>
             <p>
                 It's early 2017 and my soon-to-be CEO is complaining how he can't find an app that offers dynamic QR code services. I didn't even know what those were but I soon read up on the matter. I've never bothered to check how expensive it would be to create one of those premium accounts on those QR code generators which offer dynamic QR code services for a fee but I got so hooked on the challenge that I just decided to create an app that'll offer those for free.

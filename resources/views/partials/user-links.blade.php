@@ -2,7 +2,6 @@
     <section class="section">
         <div class="container">
             <h2 class="title is-4">Your Dynamic web QR Codes</h2>
-            <div class="masonry-grid">
             <div class="content">
                 <ul>
                     @foreach ($links as $link)
@@ -17,7 +16,6 @@
                         </modal-qr>
                     @endforeach
                 </ul>
-            </div>
             </div>
         </div>
     </section>
