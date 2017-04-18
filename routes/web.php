@@ -19,21 +19,21 @@ Auth::routes();
 
 // Navigation routes
 Route::get('/home', 'HomeController@index');
-Route::get('/generate/web', 'HomeController@web');
-Route::get('/generate/text', 'HomeController@text');
-Route::get('/generate/vcard', 'HomeController@vcard');
-Route::get('/generate/location', 'HomeController@location');
-Route::get('/generate/email', 'HomeController@email');
-Route::get('/generate/wifi', 'HomeController@wifi');
+Route::get('/web', 'HomeController@web');
+Route::get('/text', 'HomeController@text');
+Route::get('/vcard', 'HomeController@vcard');
+Route::get('/location', 'HomeController@location');
+Route::get('/email', 'HomeController@email');
+Route::get('/wifi', 'HomeController@wifi');
 Route::get('/about', 'HomeController@about');
-
-// Generation routes
-Route::post('/generate/dynamic', 'QrController@generate');
-Route::get('/dynamic/{QrCodeLink}', 'QrController@redirect');
-Route::post('/dynamic/{QrCodeLink}/update', 'QrController@update');
-Route::delete('/dynamic/{QrCodeLink}', 'QrController@drop');
 
 // Profile routes
 Route::get('/profile', 'ProfileController@show');
 Route::patch('/profile', 'ProfileController@update');
 Route::patch('/profile/password', 'ProfileController@password');
+
+// Generation routes
+Route::post('/dynamic', 'QrController@generate');
+Route::get('/{QrCodeLink}', 'QrController@redirect');
+Route::post('/{QrCodeLink}/update', 'QrController@update');
+Route::delete('/{QrCodeLink}', 'QrController@drop');

@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return redirect('/generate/web');
+        return redirect('/web');
     }
 
     public function web() {

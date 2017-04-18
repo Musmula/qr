@@ -28,7 +28,7 @@ class QrController extends Controller
         ]);
 
         alert()->success('Link generated');
-        return redirect('/generate/web');
+        return redirect('/web');
     }
 
     public function redirect($QrCodeLink) {

@@ -10,7 +10,7 @@
     <div class="container">
         <div class="columns">
             <div class="column">
-                <form action="{{ url('/generate/dynamic') }}" method="POST">
+                <form action="{{ url('/dynamic') }}" method="POST">
                     {{ csrf_field() }}
                     <label for="input" class="label">Link:</label>
                     <div class="field has-addons">

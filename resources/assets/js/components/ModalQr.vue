@@ -66,11 +66,11 @@
 
         computed: {
             qrContent() {
-                return Laravel.url + '/dynamic/' + this.staticLink
+                return Laravel.url + '/' + this.staticLink
             },
 
             action() {
-                return Laravel.url + '/dynamic/' + this.staticLink + '/update'
+                return Laravel.url + '/' + this.staticLink + '/update'
             }
         },
 
