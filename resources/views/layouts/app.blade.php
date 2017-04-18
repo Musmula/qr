@@ -19,6 +19,8 @@
 
     @include('partials.favicon')
 
+    @include('partials.seo')
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
