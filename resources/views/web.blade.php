@@ -31,8 +31,10 @@
                     </div>
 
                     @if (Auth::guest())
-                        <p class="help is-danger">Due to technical limitations, you have to register a free account in order to use the dynamic QR code feature.</p>
-                        <p class="help is-danger">However, the static codes still work fine without one.</p>
+                        <p class="help is-info">
+                            Due to technical limitations, you have to register a free account in order to use the dynamic QR code feature. 
+                            However, the static codes still work fine without one.
+                        </p>
                     @endif
 
                     <div v-show="webCodeType == 'Dynamic'">

@@ -35,7 +35,7 @@
     <nav class="nav container">
         <div class="nav-left">
             <a href="{{ url('/') }}" class="nav-item is-brand">
-                <img src="{{ url('/img/logo.jpg') }}" alt="{{ config('app.name') }}"> &nbsp;
+                <img src="{{ url('/img/logo.svg') }}" alt="{{ config('app.name') }}"> &nbsp; &nbsp;
                 <span>{{ config('app.name') }}</span>
             </a>
         </div>
