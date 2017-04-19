@@ -19,7 +19,7 @@
             </div>
             <div class="column">
                 <div class="field">
-                    <label class="label">Live preview</label>
+                    <label class="label">Preview</label>
                     <qr :content="QrContent" type="text"></qr>
                 </div>
             </div>

@@ -1,5 +1,22 @@
 <template>
-    <canvas :id="randomId" class="qr-code"></canvas>
+    <div>
+        <canvas class="qr-code"></canvas>
+        <form action="download" method="POST">
+            <input type="hidden" name="_token" :value="csrf">
+            <input type="hidden" name="codeData" :value="generateContent">
+            <div class="field">
+                <label for="size" class="label">Size</label>
+                <p class="control" style="max-width: 300px">
+                    <input type="number" class="input" id="size" min="100" max="5000" name="size" value="250">
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <button class="button is-primary">Export to image</button>
+                </p>
+            </div>
+        </form>
+    </div>
 </template>
 
 <script>
@@ -33,7 +50,7 @@
 
         mounted() {
             this.QrCode = new QRious({
-                element: document.getElementById(this.randomId),
+                element: this.$el.querySelector('canvas'),
                 value: this.generateContent,
                 size: this.size,
                 padding: this.padding
@@ -53,10 +70,6 @@
         },
 
         computed: {
-            randomId() {
-                return Math.random().toString(36).substr(2, 15)
-            },
-
             generateContent() {
                 switch (this.type){
                     case 'text':
@@ -72,6 +85,10 @@
                         return this.content
                         break
                 }
+            },
+
+            csrf() {
+                return Laravel.csrfToken
             }
         }
     }

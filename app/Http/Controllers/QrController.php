@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Response;
 use App\QrCode;
+use QrGenerator;
 use Illuminate\Http\Request;
 
 class QrController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth')->except('redirect');
+        $this->middleware('auth')->except(['redirect', 'download']);
     }
 
     // Generate a new dynamic Qr Code
@@ -55,6 +57,19 @@ class QrController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function download(Request $request) {
+        // return $request->all();
+        $this->validate($request, [
+            'size' => 'required|max:5000',
+        ]);
+        if ($request->codeData === null) {
+            alert()->error('No data provided');
+            return redirect()->back();
+        }
+        $response = Response::make(QrGenerator::format('png')->size($request->size)->generate($request->codeData), 200, ['Content-Type' => 'image/png']);
+        return $response;
     }
 
     // 

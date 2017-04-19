@@ -35,5 +35,6 @@ Route::patch('/profile/password', 'ProfileController@password');
 // Generation routes
 Route::post('/dynamic', 'QrController@generate');
 Route::get('/{QrCodeLink}', 'QrController@redirect');
+Route::post('/download', 'QrController@download');
 Route::post('/{QrCodeLink}/update', 'QrController@update');
 Route::delete('/{QrCodeLink}', 'QrController@drop');
