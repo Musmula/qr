@@ -46,6 +46,10 @@
                         <a href="https://plus.google.com/+OliverDvorski" target="_blank" class="icon is-large">
                             <i style="font-size: 2rem" class="icon-gplus"></i>
                         </a>
+
+                        <a href="https://www.instagram.com/oliverdvorski/" target="_blank" class="icon is-large">
+                            <i style="font-size: 2rem" class="icon-instagram"></i>
+                        </a>
                     </p>
                 </div>
             </div>
