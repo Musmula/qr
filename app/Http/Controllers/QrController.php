@@ -12,6 +12,7 @@ class QrController extends Controller
 {
     public function __construct()
     {
+        // Policies?
         $this->middleware('auth')->except(['redirect', 'download']);
     }
 
