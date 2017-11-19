@@ -28,7 +28,6 @@
                 <div>
                     <p>Released under the <a href="https://opensource.org/licenses/mit-license.php" target="_blank">MIT</a> license</p>
                     <p>A thing by <a href="https://OliverDvorski.com" target="_blank">Oliver Dvorski</a></p>
-                    <p>In association with <a href="https://mittagsfreunde.de" target="_blank">Mittagsfreunde</a></p>
                 </div>
             </div>
 
