@@ -28,11 +28,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function links() {
+    public function links()
+    {
         return $this->hasMany(QrCode::class);
     }
 
-    public function hasPermission(QrCode $code) {
+    public function hasPermission(QrCode $code)
+    {
         return $this == $code->user;
     }
 }
