@@ -8,15 +8,18 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('auth');
     }
 
-    public function show() {
+    public function show()
+    {
         return view("profile");
     }
 
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email'
@@ -26,7 +29,8 @@ class ProfileController extends Controller
         return redirect()->back();
     }
 
-    public function password(Request $request) {
+    public function password(Request $request)
+    {
         $this->validate($request, [
             'password' => 'required',
             'new_password' => 'required|confirmed'

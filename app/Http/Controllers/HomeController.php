@@ -12,7 +12,8 @@ class HomeController extends Controller
         return redirect('/web');
     }
 
-    public function web() {
+    public function web()
+    {
         if (Auth::user()) {
             $links = Auth::user()->links;
         }
@@ -23,27 +24,33 @@ class HomeController extends Controller
         ]);
     }
 
-    public function text() {
+    public function text()
+    {
         return view('text', ['active' => 'text']);
     }
 
-    public function vcard() {
+    public function vcard()
+    {
         return view('vcard', ['active' => 'vcard']);
     }
 
-    public function location() {
+    public function location()
+    {
         return view('location', ['active' => 'location']);
     }
 
-    public function email() {
+    public function email()
+    {
         return view('email', ['active' => 'email']);
     }
 
-    public function wifi() {
+    public function wifi()
+    {
         return view('wifi', ['active' => 'wifi']);
     }
 
-    public function about() {
+    public function about()
+    {
         return view('about', ['active' => 'none']);
     }
 }

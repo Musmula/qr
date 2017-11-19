@@ -9,7 +9,8 @@ class QrCode extends Model
 {
     protected $fillable = ['user_id', 'name', 'description', 'dynamic_link', 'static_link'];
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 }
