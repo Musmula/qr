@@ -1,1 +1,1 @@
-Readme content coming soon
+A functional dynamic QR Code generator. This project is more of a proof of concept rather than a finished product. The next version is being build at [this](https://github.com/oliver-dvorski/qr-dynamics) repo
